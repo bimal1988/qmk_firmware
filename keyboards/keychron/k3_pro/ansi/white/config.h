@@ -44,7 +44,12 @@
 #    define PHASE_CHANNEL MSKPHASE_6CHANNEL
 
 /* Set LED driver current */
-#    define SNLED27351_CURRENT_TUNE \
-        { 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20 }
+#    define SNLED27351_CURRENT_TUNE {0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20}
+
+#    define TAPPING_TERM 200
+#    define QUICK_TAP_TERM 0
+#    define FLOW_TAP_TERM 150
+#    define CHORDAL_HOLD
+#    define PERMISSIVE_HOLD
 
 #endif
