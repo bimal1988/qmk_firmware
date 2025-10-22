@@ -25,9 +25,12 @@
 // Right-hand home row mods
 #define HOME_J RSFT_T(KC_J)
 #define HOME_K ROPT_T(KC_K)
-#define HOME_L LCTL_T(KC_L)
+#define HOME_L RCTL_T(KC_L)
 #define HOME_SCLN RCMD_T(KC_SCLN)
 
+#define HOME_CAPS LT(MAC_NAV, KC_ESC)
+
+// Combo declarations
 const uint16_t PROGMEM jk_combo[] = {HOME_J, HOME_K, COMBO_END};
 const uint16_t PROGMEM fj_combo[] = {HOME_F, HOME_J, COMBO_END};
 
@@ -51,17 +54,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC,        KC_BRID,  KC_BRIU,  KC_MCTL,  KC_LPAD,  BL_DOWN,  BL_UP,    KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,       KC_VOLD,       KC_VOLU,  KC_SNAP,  KC_DEL,   BL_STEP,
      KC_GRV,        KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,          KC_MINS,       KC_EQL,   KC_BSPC,            KC_PGUP,
      KC_TAB,        KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,          KC_LBRC,       KC_RBRC,  KC_BSLS,            KC_PGDN,
-     TG(MAC_NAV),   HOME_A,   HOME_S,   HOME_D,   HOME_F,   KC_G,     KC_H,     HOME_J,   HOME_K,   HOME_L,   HOME_SCLN,     KC_QUOT,                 KC_ENT,             KC_HOME,
+     HOME_CAPS,     HOME_A,   HOME_S,   HOME_D,   HOME_F,   KC_G,     KC_H,     HOME_J,   HOME_K,   HOME_L,   HOME_SCLN,     KC_QUOT,                 KC_ENT,             KC_HOME,
      KC_LSFT,                 KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,        KC_SLSH,                 KC_RSFT,  KC_UP,    KC_END,
      KC_LCTL,       KC_LOPTN, KC_LCMMD,                               KC_SPC,                                 KC_RCMMD,      MO(MAC_FN),    KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 
 [MAC_NAV] = LAYOUT_ansi_84(
-     KC_TRNS,  KC_NO,    KC_NO,          KC_NO,        KC_NO,         KC_NO,         KC_NO,         KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,
-     KC_NO,    KC_NO,    KC_NO,          KC_NO,        KC_NO,         KC_NO,         KC_NO,         KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_NO,  KC_NO,  KC_TRNS,        KC_NO,
-     KC_TRNS,  KC_NO,    LALT(KC_RGHT),  KC_NO,        KC_NO,         KC_NO,         LCMD(KC_C),    KC_PGUP,  KC_HOME,  KC_END,   LCMD(KC_V),  KC_NO,  KC_NO,  KC_NO,          KC_NO,
-     KC_TRNS,  KC_LCMD,  KC_LCTL,        KC_LOPT,      KC_LSFT,       KC_NO,         KC_LEFT,       KC_DOWN,  KC_UP,    KC_RGHT,  KC_NO,       KC_NO,          KC_ENT,         KC_NO,
-     KC_TRNS,            LCMD(KC_Z),     LCMD(KC_X),   LCMD(KC_C),    LCMD(KC_V),    LALT(KC_LEFT), KC_PGDN,  KC_NO,    QK_AREP,  QK_REP,      KC_NO,          KC_RSFT,KC_NO,  KC_NO,
-     KC_TRNS,  KC_TRNS,  KC_TRNS,                                                    KC_NO,                                       KC_NO,       KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO),
+     KC_TRNS,  KC_NO,    KC_NO,         KC_NO,    KC_NO,    KC_NO,    KC_NO,         KC_NO,    KC_NO,    KC_NO,         KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
+     KC_NO,    KC_NO,    KC_NO,         KC_NO,    KC_NO,    KC_NO,    KC_NO,         KC_NO,    KC_NO,    KC_NO,         KC_NO,    KC_NO,    KC_NO,    KC_TRNS,            KC_NO,
+     KC_TRNS,  KC_NO,    A(KC_RGHT),    KC_NO,    KC_NO,    KC_NO,    G(KC_C),       KC_PGUP,  G(KC_UP), G(KC_DOWN),    G(KC_V),  KC_NO,    KC_NO,    KC_NO,              KC_NO,
+     KC_TRNS,  KC_LCMD,  KC_LCTL,       KC_LOPT,  KC_LSFT,  KC_NO,    KC_LEFT,       KC_DOWN,  KC_UP,    KC_RGHT,       KC_NO,    KC_NO,              KC_TRNS,            KC_NO,
+     KC_TRNS,            G(KC_Z),       G(KC_X),  G(KC_C),  G(KC_V),  A(KC_LEFT),    KC_PGDN,  KC_NO,    QK_AREP,       QK_REP,   G(KC_F),            KC_TRNS,  KC_NO,    KC_NO,
+     KC_TRNS,  KC_TRNS,  KC_TRNS,                                     KC_NO,                                            KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO),
 
 [MAC_FN] = LAYOUT_ansi_84(
      KC_TRNS,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_TRNS,  KC_TRNS,  BL_TOGG,
