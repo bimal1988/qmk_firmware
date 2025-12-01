@@ -9,3 +9,8 @@ SRC += \
 
 VPATH += $(TOP_DIR)/keyboards/lemokey/$(LEMOKEY_COMMON_DIR)
 
+ESC := $(shell printf '\033')
+YELLOW := $(ESC)[1;33m
+RESET  := $(ESC)[0m
+
+$(info $(YELLOW)Note: This branch is deprecated. Please use the '2025q3' branch instead.$(RESET))
